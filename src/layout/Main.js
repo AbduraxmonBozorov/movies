@@ -11,7 +11,7 @@ export default class Main extends React.Component{
 
     componentDidMount(){
         this.setState({loading: false})
-        fetch(`http://www.omdbapi.com/?apikey=8c03acc4&s=panda`)
+        fetch(`https://www.omdbapi.com/?apikey=8c03acc4&s=panda`)
         .then(response=>response.json())
         .then(data=>this.setState({films: data.Search, loading: true}))
     }
@@ -22,7 +22,7 @@ export default class Main extends React.Component{
 
     media=(txt, typ)=>{
         this.setState({loading: false})
-        fetch(`http://www.omdbapi.com/?apikey=8c03acc4&s=${txt}${typ==='all' ? '' : `&type=${typ}`}`)
+        fetch(`https://www.omdbapi.com/?apikey=8c03acc4&s=${txt}${typ==='all' ? '' : `&type=${typ}`}`)
         .then(response=>response.json())
         .then(data=>this.setState({films: data.Search, loading: true}))
     }
